@@ -1,7 +1,11 @@
 name: 'Build Number'
 description: 'Returns a project-specific build number'
 author: 'Travis Johnson <@travisj>'
-inputs: key: description: 'project-unique key that you want to get an incrementing build number for'
-required: true
-runs: using: 'node12'
+inputs:
+  key:
+  description: 'project-unique key that you want to get an incrementing build number for'
+  required: false
+    default: 'default'
+runs:
+  using: 'node12'
 main: 'dist/index.js'
