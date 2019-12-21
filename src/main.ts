@@ -1,16 +1,13 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import axios from 'axios'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`)
-
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
+    const key: string = core.getInput('key')
+    const url = `https://build-numbers.herokuapp.com/${key}`
+    const response = await axios.get(url)
+    const buildNumber = response.data
+    core.setOutput('build-number', buildNumber)
   } catch (error) {
     core.setFailed(error.message)
   }

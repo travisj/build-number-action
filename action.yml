@@ -1,10 +1,7 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
-inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
-runs:
-  using: 'node12'
-  main: 'dist/index.js'
+name: 'Build Number'
+description: 'Returns a project-specific build number'
+author: 'Travis Johnson <@travisj>'
+inputs: key: description: 'project-unique key that you want to get an incrementing build number for'
+required: true
+runs: using: 'node12'
+main: 'dist/index.js'
