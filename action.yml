@@ -3,9 +3,12 @@ description: 'Returns a project-specific build number'
 author: 'Travis Johnson <@travisj>'
 inputs:
   key:
-    description: 'project-unique key that you want to get an incrementing build number for'
+    description: 'set key to something unique (at project level) to get multiple build numbers'
     required: false
     default: 'default'
+outputs:
+  build-number:
+    description: Build number to use
 runs:
   using: 'node12'
-main: 'dist/index.js'
+  main: 'dist/index.js'
