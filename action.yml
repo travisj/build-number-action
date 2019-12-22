@@ -5,7 +5,7 @@ inputs:
   key:
   description: 'project-unique key that you want to get an incrementing build number for'
   required: false
-    default: 'default'
+  default: 'default'
 runs:
   using: 'node12'
 main: 'dist/index.js'
