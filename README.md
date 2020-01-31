@@ -6,7 +6,7 @@
 
 ```yml
 - uses: travisj/build-number-action@v1
-  id: my-build-number
+  id: my-project-build-number
 
 - name: Echo Build Number
   run: echo $BUILD_NUMBER
